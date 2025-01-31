@@ -74,7 +74,7 @@ export default function DriveContent() {
 
   const handleItemClick = (item: Item) => {
     if (item.type === "folder") {
-      setCurrentFolder(item.children || [])
+      setCurrentFolder(item.children ?? [])
       setBreadcrumbs([...breadcrumbs, item])
     } else {
       // For files, you would typically open or download the file
@@ -89,7 +89,8 @@ export default function DriveContent() {
     } else {
       const newBreadcrumbs = breadcrumbs.slice(0, index + 1)
       setBreadcrumbs(newBreadcrumbs)
-      setCurrentFolder(newBreadcrumbs[newBreadcrumbs.length - 1].children || [])
+      const lastBreadcrumb = newBreadcrumbs[newBreadcrumbs.length - 1]
+      setCurrentFolder(lastBreadcrumb?.children ?? []);
     }
   }
 
@@ -158,4 +159,3 @@ export default function DriveContent() {
     </div>
   )
 }
-
