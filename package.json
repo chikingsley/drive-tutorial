@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.1.0",
+  "packageManager": "pnpm@9.15.4",
   "scripts": {
     "build": "next build",
     "check": "next lint && tsc --noEmit",
